@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Precision Teleprompter</title>
+<link rel="stylesheet" href="teleprompter.css">
+</head>
+<body>
+
+<div id="viewport">
+  <!-- Title bar / drag handle -->
+  <div id="titlebar">
+    <span>TELEPROMPTER</span>
+  </div>
+
+  <!-- Controls overlay -->
+  <div id="controls">
+    <div class="ctrl-group">
+      <button class="ctrl-btn" id="btn-play" title="Space to toggle">&#9654; Play</button>
+    </div>
+    <div class="ctrl-group">
+      <label>Speed</label>
+      <input type="range" id="slider-speed" min="0" max="100" value="20">
+      <span class="speed-val" id="speed-val">20</span>
+    </div>
+    <div class="ctrl-group">
+      <label>Font</label>
+      <input type="range" id="slider-font" min="20" max="150" value="42">
+      <span class="font-val" id="font-val">42px</span>
+    </div>
+    <div class="ctrl-group">
+      <label>Color</label>
+      <button class="ctrl-btn active" id="btn-color-white" data-color="#ffffff">W</button>
+      <button class="ctrl-btn" id="btn-color-yellow" data-color="#ffe040">Y</button>
+    </div>
+    <div class="ctrl-group">
+      <label>Align</label>
+      <div class="align-btns">
+        <button class="ctrl-btn active" data-align="left" title="Left">&#8676;</button>
+        <button class="ctrl-btn" data-align="center" title="Center">&#8596;</button>
+        <button class="ctrl-btn" data-align="right" title="Right">&#8677;</button>
+      </div>
+    </div>
+    <div class="ctrl-group" style="margin-left:auto;">
+      <button class="ctrl-btn" id="btn-mode">&#9998; Edit</button>
+    </div>
+  </div>
+
+  <!-- Script area -->
+  <div id="script-wrapper">
+    <div id="cue-line"></div>
+    <div id="script-container"></div>
+    <textarea id="editor" style="display:none;" spellcheck="false" placeholder="Paste or type your script here…"></textarea>
+  </div>
+</div>
+
+<!-- Keyboard hints -->
+<div id="hints">
+  <span><kbd>Space</kbd> Play / Pause</span>
+  <span><kbd>A</kbd> Speed -</span>
+  <span><kbd>S</kbd> Speed +</span>
+</div>
+
+<script src="teleprompter.js"></script>
+</body>
+</html>
